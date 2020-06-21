@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script>
+  
+ function selectchange(val){
+            const h1 = document.querySelector("h1");
+            if(val=="black"){
+                h1.style.color = "black";
+            }
+            else if(val=="red"){
+                h1.style.color = "red";
+            }
+            else if(val=="green"){
+                h1.style.color = "green";
+            }
+            else{
+                h1.style.color="blue";
+            }
+            
+        }   
+</script>
+    </head>
+    <body>
+        <h1>Hello!Welcome to our preintern group</h1>
+        
+           <select onchange="selectchange(this.value)" >
+               <option id="value" value="black" data-color="black">Black</option>
+               <option id="value" value="red" data-color="red">Red</option>
+               <option id="value" value="green" data-color="green">Green</option>
+               <option id="value" value="blue" data-color="blue">Blue</option>
+           </select>
+        
+    </body>
+</html>
