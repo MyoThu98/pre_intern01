@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script>
+            function getText(val){
+                if(val.length>0){
+                    const submit = document.querySelector("#submit");
+                    submit.classList.add("button");
+                    submit.style.display = "block";
+                }
+                else{
+                    const submit = document.querySelector("#submit");
+                    
+                    submit.style.display = "none";
+                }
+                
+            }
+            
+            function done(){
+                const li = document.createElement("li");
+                const value = document.getElementById("value").value;
+                document.getElementById("value").value = "";
+                console.log("hello"+value);
+                li.innerHTML = "<h4>"+value+"</h4>";
+                
+                if(value!=""){document.querySelector("#list").appendChild(li);}
+                else{
+                    alert("You entered nothing!");
+                }
+            }
+        </script>
+
+            
+    </head>
+    <body class="container">
+        <h1 class="text-center" style="font-weight: 700; color: rgb(37, 161, 238);">To Do List</h1>
+        <div class="form-group">
+          
+            <input type="text" oninput="getText(this.value)" name="" id="value" style="width: 40%; margin-right: 0;" class="form-control mx-auto d-block" placeholder="Enter Something..." aria-describedby="helpId">
+                <ul id="list" class="container mx-auto d-block" style="display: flex; width: 50%; margin-top: 50px;">
+    
+                </ul>
+            </div>
+            <button type="submit" onclick="done()" class="btn btn-primary btn-lg mx-auto col-lg-3 col-md-4 col-sm-12" style="display: none; margin-top: 40px;" id="submit">Submit</button>
+            
+        </div>
+    </body>
+</html>
